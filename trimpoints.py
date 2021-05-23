@@ -1,10 +1,10 @@
 import fileinput
-
+# input is .txt list of coordinates in form: x,y
+# output is .txt list of code to paste on arduino IDE
 X = []
 Y = []
 
-every_n = 2  # we throw away every other pixel to improve the refresh rate
-
+every_n = 2  # remove every other pixel to increase refresh rate
 i = 0
 for line in fileinput.input():
     i += 1
@@ -12,10 +12,8 @@ for line in fileinput.input():
     x, y = line.strip().split(",")
     X.append(x)
     Y.append(y)
-
-print("byte x_points[NUM_POINTS] = {%s};" % ','.join(X))
-print("byte y_points[NUM_POINTS] = {%s};" % ','.join(Y))
+print("const unsigned long x_points[NUM_POINTS] = {%s};" % ','.join(X))
+print("const unsigned long y_points[NUM_POINTS] = {%s};" % ','.join(Y))
 print(len(X))
 
-
-#call python trimpoints.py swag.txt > swag2.txt
+#call python trimpoints.py inputlist.txt > arduino_list.txt
