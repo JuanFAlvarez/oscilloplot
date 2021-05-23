@@ -21,3 +21,7 @@ The STM32F103xx blue pill micrcontroller is better for this application since it
 
 Here I use the lower 8 bits of PORTA and the upper 8 bits of PORTB. The reason for choosing the upper 8 bits of PORTB rather than the lower 8 was because some of the lower bits did not seem to be writeable.
 
+
+**Drawing tool**
+
+I made a drawing tool using tkinter on  Python 3. Although it logs up to the maximum amount of points in a 255x255 window, both microcontrollers cannot output higher than approximately 250+ data points after processing. Try to keep the total points to 250 MAX so that they all show up. 
