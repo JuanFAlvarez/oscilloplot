@@ -5,14 +5,16 @@ X = []
 Y = []
 lastx, lasty = 0, 0
 
+# xy and addLine are for graphical purposes only
+# on_move_press is the one that logs the one to the list and fixes Y
+
 def xy(event):
-    # Takes the coordinates of the mouse when you click the mouse
+    # logs coordinates when mouse is clicked
     global lastx, lasty
     lastx, lasty = event.x, event.y
 
 def addLine(event):
-    # reates a line when you drag the mouse
-    # from the point where you clicked the mouse to where the mouse is now
+    # draws line from old point to new point
     global lastx, lasty
     canvas.create_line((lastx, lasty, event.x, event.y))
     # this makes the new starting point of the drawing
