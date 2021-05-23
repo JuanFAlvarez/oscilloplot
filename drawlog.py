@@ -1,9 +1,6 @@
 import tkinter as tk
-# prints raw x and y to be processed
-
 X = []
 Y = []
-
 lastx, lasty = 0, 0
 
 def xy(event):
@@ -31,15 +28,12 @@ root = tk.Tk()
 root.geometry("255x255")
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
-
 canvas = tk.Canvas(root)
 canvas.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
 canvas.bind("<Button-1>", xy)
 canvas.bind("<B1-Motion>", addLine)
-
 root.bind("<B1-Motion>",on_move_press)
 root.mainloop()
-
 print(" #define NUM_POINTS %s;" % str(len(X)))
 print("byte x_points[NUM_POINTS] = {%s};" % ','.join(X))
 print("byte y_points[NUM_POINTS] = {%s};" % ','.join(Y))
