@@ -41,6 +41,11 @@ canvas.bind("<B1-Motion>", addLine)
 root.bind("<B1-Motion>",on_move_press)
 root.mainloop()
 
+# delete every other entry to reduce points and increase trace refresh
+for i in range(1,int(len(X)/2)):
+    X.pop(i)
+    Y.pop(i)
+
 print("const int NUM_POINTS = %s;" % str(len(X)))
 print("const unsigned long x_points[NUM_POINTS] = {%s};" % ','.join(X))
 print("const unsigned long y_points[NUM_POINTS] = {%s};" % ','.join(Y))
