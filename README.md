@@ -1,7 +1,7 @@
 # Oscilloscope Plotter
 **R2R Parallel Port Acess Oscilloscope Plotter**
 
-This project uses an STM32F103("Blue Pill") or Arduino Uno/Nano to drawn images on an oscilloscope using the XY mode.
+This project uses an STM32F103("Blue Pill") or Arduino Uno/Nano to draw images on an oscilloscope using the XY mode.
 
 Neither microcontroller development board has a built-in DAC, but they do have enough output pins to make use of a simple R2R DAC. 
 
