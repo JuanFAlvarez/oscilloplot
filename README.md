@@ -9,7 +9,7 @@ Neither microcontroller development board has a built-in DAC, but they do have e
 
 **Arduino UNO/NANO**
 
-The Arduino UNO does not allow for full output writing of PORTB. This port is limited to only 6-bits per the documentation. This means you will have to use one 8-bit R2R DAC and one 6-bit R2R DAC. 
+The Arduino UNO does not allow for full output writing of PORTB. This port is limited to only 6-bits according to the documentation. This means you will have to use one 8-bit R2R DAC and one 6-bit R2R DAC. 
 
 Although this saves some resistors, it slightly distorts the image due to scaling down the y-output down to 6-bits rather than 8. 
 
