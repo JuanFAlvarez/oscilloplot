@@ -1,12 +1,11 @@
 import tkinter as tk
-# prints raw x and y to be processed
-
 X = []
 Y = []
 lastx, lasty = 0, 0
 
 # xy and addLine are for graphical purposes only
 # on_move_press is the one that logs the one to the list and fixes Y
+
 
 def xy(event):
     # logs coordinates when mouse is clicked
@@ -23,7 +22,7 @@ def addLine(event):
 # logs clicked coordinate on list
 def on_move_press( event):
     curX, curY = (event.x, event.y)
-    curY=255-curY
+    curY=255-curY # since tkinter uses different coordinates
     X.append(str(curX))
     Y.append(str(curY))
 
@@ -39,9 +38,15 @@ canvas.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
 canvas.bind("<Button-1>", xy)
 canvas.bind("<B1-Motion>", addLine)
 root.bind("<B1-Motion>",on_move_press)
+
+# #inserting image as background to trace
+# filename = tk.PhotoImage(file = "sanic.png")
+# background_label = tk.Label(root, image=filename)
+# background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
 root.mainloop()
 
-# delete every other entry to reduce points and increase trace refresh
+# delete every 2nd entry to reduce points and increase trace refresh
 for i in range(1,int(len(X)/2)):
     X.pop(i)
     Y.pop(i)
