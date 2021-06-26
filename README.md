@@ -25,3 +25,8 @@ Here I use the lower 8 bits of PORTA and the upper 8 bits of PORTB. The reason f
 **Drawing tool**
 
 I made a drawing tool using tkinter on  Python 3. Although it logs up to the maximum amount of points in a 255x255 window, both microcontrollers cannot output all data poiints. The STM32 can output about 500 and Arduino Uno about 250. 
+
+
+**Example**
+
+![tesla_image](images/tesla2.jpg)
